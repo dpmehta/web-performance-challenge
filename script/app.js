@@ -9,7 +9,7 @@ const acceptCookies = () => {
   document.querySelector('.cookieLayer__base').classList.add('cookieLayer__base--hidden');
 
   initAd();
-
+    loadDeferredScripts();
     const container = document.getElementById("video-container");
     container.innerHTML = `
       <iframe 
@@ -23,6 +23,8 @@ const acceptCookies = () => {
         preload="none">
       </iframe>
     `;
+
+
 };
 
 const dynamicContent = () => {
@@ -37,6 +39,32 @@ const dynamicContent = () => {
     teaser.innerHTML = CONTENT_ARTICLE_TEASERS[index];
   });
 };
+
+function loadDeferredScripts() {
+  // CSS first
+  const swiperCSS = document.createElement('link');
+  swiperCSS.rel = 'stylesheet';
+  swiperCSS.href = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
+  document.head.appendChild(swiperCSS);
+
+  // Swiper JS
+  const swiperScript = document.createElement('script');
+  swiperScript.src = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
+  swiperScript.defer = true;
+  document.body.appendChild(swiperScript);
+
+  swiperScript.onload = () => {
+    const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});
+  };
+}
 
 const cookieLayerInit = () => {
 
