@@ -29,20 +29,6 @@
     window.addEventListener('load', () => {
       loadMobileCSS();
       loadDeferredScripts();
-      initAd();
-      const container = document.getElementById("video-container");
-      container.innerHTML = `
-          <iframe 
-            src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=1&loop=1&byline=0&muted=1&controls=0"
-            width="640"
-            height="360"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-            preload="none">
-          </iframe>
-      `;
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
