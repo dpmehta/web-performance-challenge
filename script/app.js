@@ -11,10 +11,10 @@ const acceptCookies = () => {
 
 const dynamicContent = () => {
   const teasers = document.querySelectorAll('.teaser__text');
-  const marqueeBar = document.querySelector('marquee');
+  const marqueeBar = document.querySelector('#site-main-news');
 
   // mock content delay
-  setTimeout(() => marqueeBar.innerHTML = CONTENT_BREAKING_NEWS, 3000);
+  setTimeout(() => marqueeBar.innerHTML = CONTENT_BREAKING_NEWS, 10);
 
   // create dynamic content
   teasers.forEach((teaser, index) => {
