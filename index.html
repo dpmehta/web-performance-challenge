@@ -146,19 +146,121 @@
 
       <div class="main__teasers main__section">
         <article class="teaser__base">
-          <img class="teaser__image" src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1170&q=100" class="card__img"><hr>
+         <picture>
+  <!-- AVIF (best compression) -->
+  <source
+    type="image/avif"
+    srcset="
+      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
+      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
+      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=avif&q=70 800w
+    "
+    sizes="(max-width: 600px) 100vw, 616px"
+  />
+
+  <!-- WebP fallback -->
+  <source
+    type="image/webp"
+    srcset="
+      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
+      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
+      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=webp&q=70 800w
+    "
+    sizes="(max-width: 600px) 100vw, 616px"
+  />
+
+  <!-- JPEG fallback -->
+  <img
+    src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=jpg&q=70"
+    alt="Scenic coastal lighthouse view"
+    width="616"
+    height="411"
+    loading="lazy"
+    class="teaser__image card__img"
+  />
+</picture>
+
+          <hr>
           <h1 class="teaser__title">First Party</h1>
           <div class="teaser__text"></div>
           <button class="teaser__link">Read more</button>
         </article>
         <article class="teaser__base">
-          <img class="teaser__image" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=pngfit=crop&w=1170&q=100" class="card__img"><hr>
+          <picture>
+  <!-- AVIF (best compression, modern browsers) -->
+  <source
+    type="image/avif"
+    srcset="
+      https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
+      https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
+      https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&fm=avif&q=70 800w
+    "
+    sizes="(max-width: 600px) 100vw, 616px"
+  />
+
+  <!-- WebP fallback (nearly universal support) -->
+  <source
+    type="image/webp"
+    srcset="
+      https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
+      https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
+      https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&fm=webp&q=70 800w
+    "
+    sizes="(max-width: 600px) 100vw, 616px"
+  />
+
+  <!-- JPEG fallback (for old browsers) -->
+  <img
+    src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=616&fm=jpg&q=70"
+    alt="Rustic lighthouse by the sea"
+    width="616"
+    height="411"
+    loading="lazy"
+    class="teaser__image card__img"
+  />
+</picture>
+
+          <hr>
           <h1 class="teaser__title">Second Party</h1>
           <div class="teaser__text"></div>
           <button class="teaser__link">Read more</button>
         </article>
         <article class="teaser__base">
-          <img class="teaser__image" src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1170&q=100" class="card__img"><hr>
+          <picture>
+  <!-- AVIF (best compression) -->
+  <source
+    type="image/avif"
+    srcset="
+      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
+      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
+      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=avif&q=70 800w
+    "
+    sizes="(max-width: 600px) 100vw, 616px"
+  />
+
+  <!-- WebP fallback -->
+  <source
+    type="image/webp"
+    srcset="
+      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
+      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
+      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=webp&q=70 800w
+    "
+    sizes="(max-width: 600px) 100vw, 616px"
+  />
+
+  <!-- Default fallback (JPEG for old browsers) -->
+  <img
+    src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=jpg&q=70"
+    alt="Lighthouse by the sea"
+    width="616"
+    height="411"
+    loading="lazy"
+    class="teaser__image card__img"
+  />
+</picture>
+          
+          <hr>
           <h1 class="teaser__title">Third Party</h1>
           <div class="teaser__text"></div>
           <button class="teaser__link">Read more</button>
