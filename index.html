@@ -10,46 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-    // Adobe Target pre-hiding code snippet 
-    ;(function(win, doc, style, timeout) {
-      var STYLE_ID = 'at-body-style';
-
-      function getParent() {
-        return doc.getElementsByTagName('head')[0];
-      }
-
-      function addStyle(parent, id, def) {
-        if (!parent) {
-          return;
-        }
-
-        var style = doc.createElement('style');
-        style.id = id;
-        style.innerHTML = def;
-        parent.appendChild(style);
-      }
-
-      function removeStyle(parent, id) {
-        if (!parent) {
-          return;
-        }
-
-        var style = doc.getElementById(id);
-
-        if (!style) {
-          return;
-        }
-
-        parent.removeChild(style);
-      }
-
-      addStyle(getParent(), STYLE_ID, style);
-      setTimeout(function() {
-        removeStyle(getParent(), STYLE_ID);
-      }, timeout);
-    }(window, document, "body {opacity: 0 !important}", 3));
-  </script>
-  <script>
     // advertisment mock
     const initAd = () => {
       const adSpace = document.querySelector('.main__advertising');
@@ -62,7 +22,6 @@
       $('head').append(`<link rel="stylesheet" type="text/css" href="styles/mobile.css">`);
     };
     window.addEventListener('load', () => {
-      initAd();
       loadMobileCSS();
     });
   </script>
@@ -164,7 +123,7 @@
       </div>
       
       <div class="main__video main__section">
-        <iframe src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=1&loop=1&byline=0&muted=1&controls=0 " width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <div id="video-container"></div>
         <div class="form__base">
           <div class="form__intro">Something about lighthouses, describing point of the video we are putting here to prove how awesome they really are, no.</div>
           <div class="from__control">
