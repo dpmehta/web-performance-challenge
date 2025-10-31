@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+   <title>The Rum Diary</title>
   <link rel="stylesheet" href="./styles.min.css" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable"/>
@@ -27,19 +30,16 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
-  <title>The Rum Diary</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
 </head>
 <body>
-  <div id="cookie-vue">
+  <div id="cookie-vue" role="region" aria-label="Cookie consent banner">
   </div>
-  <header class="header__base">
+  <header class="header__base" role="banner">
     <div class="header__content">
-      <a class="header__logo" href="#">
-        <img class="header__image" src="./logo.png">
+      <a class="header__logo" href="#" aria-label="Home">
+        <img class="header__image" src="./logo.png" alt="The Rum Diary logo">
       </a>
-      <div class="header__navigation">
+      <nav class="header__navigation" role="navigation" aria-label="Main navigation">
         <ul class="navigation__list">
           <li class="navigation__item">
             <a class="navigation__link" href="#">
@@ -57,26 +57,27 @@
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main class="main__base">
-    <div class="main__advertising"></div>
+  <main class="main__base" role="main">
+    <div class="main__advertising" aria-live="polite" aria-label="Advertisement area" aria-live="polite" role="region" aria-label="Latest news ticker"></div>
     
     <div class="main__content">
       <div class="main__news main__section">
         <marquee id="site-main-news" width="100%" direction="left" style="line-height: 30px;background-color: darkred;color: red;"></marquee>
       </div>
       
-      <div class="main__hero main__section">
-        <div class="hero__carousel div1 swiper">
+      <section class="main__hero main__section" aria-label="Featured carousel">
+        <div class="hero__carousel div1 swiper" aria-label="Image carousel">
   <!-- Swiper wrapper -->
   <div class="swiper-wrapper">
 
     <!-- Slide 1 -->
     <div class="swiper-slide lazy">
       <img
+        alt="A scenic view of a lighthouse by the sea"
         src="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=640&q=60"
         srcset="
           https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=480&q=60 480w,
@@ -95,6 +96,7 @@
     <!-- Slide 2 (placeholder or future image) -->
     <div class="swiper-slide">
       <img
+        alt="Ocean waves under bright sunlight"
         src="https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=640&q=60"
         srcset="
           https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=480&q=60 480w,
@@ -113,6 +115,7 @@
     <!-- Slide 3 (placeholder or future image) -->
     <div class="swiper-slide">
       <img
+        alt="Beautiful lighthouse near rocky shore"
         src="https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=640&q=60"
         srcset="
           https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=480&q=60 480w,
@@ -130,21 +133,21 @@
 
   </div>
 
-  <div class="swiper-text">Local restaurants finally optimising time to first bite</div>
+  <div class="swiper-text" aria-live="polite">Local restaurants finally optimising time to first bite</div>
 </div>
 
         
         <div class="hero__teaser div2">
-          <img src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&h=400&q=100" class="hero__img lazy">
+          <img alt="Waterfall preview image" src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&h=400&q=100" class="hero__img lazy">
           <div class="hero__teaserText">Top 10 waterfalls to analyse this week</div>
         </div>
         <div class="hero__teaser div3">
-          <img src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" data-src="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1180&q=80" class="hero__img lazy">
+          <img  alt="View of the coastline near a lighthouse" src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" data-src="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1180&q=80" class="hero__img lazy">
           <div class="hero__teaserText">Bouncing rates increased signifincantly last week</div>
         </div>
-      </div>
+      </section>
 
-      <div class="main__teasers main__section">
+      <div class="main__teasers main__section" aria-label="Article teasers">
         <article class="teaser__base">
          <picture>
   <!-- AVIF (best compression) -->
@@ -267,42 +270,42 @@
         </article>
       </div>
       
-      <div class="main__weather main__section">
+      <section class="main__weather main__section" aria-label="Weather information">
         <a class="weatherwidget-io" href="https://forecast7.com/en/48d1411d58/munich/" data-label_1="MUNICH" data-label_2="WEATHER" data-theme="original" >MUNICH WEATHER</a>
-      </div>
+      </section>
       
-      <div class="main__video main__section">
-        <div id="video-container"></div>
-        <div class="form__base">
-          <div class="form__intro">Something about lighthouses, describing point of the video we are putting here to prove how awesome they really are, no.</div>
+      <section class="main__video main__section" aria-label="Video and feedback form">
+        <div id="video-container" aria-hidden="true"></div>
+        <form class="form__base" aria-label="Lighthouse feedback form">
+          <p class="form__intro">Something about lighthouses, describing point of the video we are putting here to prove how awesome they really are, no.</p>
           <div class="from__control">
-            <label class="form__label">Name</label>
-            <input type="text" />
+            <label class="form__label" for="user-name">Name</label>
+            <input type="text" id="user-name" name="user-name"/>
           </div>
           <div class="from__control">
-            <label class="form__label">Please share with us why do you think lighthouses are awesome: </label>
-            <textarea></textarea>
+            <label class="form__label" for="user-feedback">Please share with us why do you think lighthouses are awesome: </label>
+            <textarea id="user-feedback" name="user-feedback"></textarea>
           </div>
-          <a class="form__button" id="button" onclick="alert('Submitting using way too much JavaScript...')">Submit</a>
-        </div>
-    </div>
+          <button class="form__button" id="button"  type="button" onclick="alert('Submitting using way too much JavaScript...')">Submit</button>
+        </form>
+    </section>
   </main>
   
-  <div class="disclaimer__base">
+  <aside class="disclaimer__base" role="note">
     <p class="disclaimer__text">
       This site is made for the purpose of web performance and accessibility testing challeng and it is full of bad practices on purpose.
     </p>
-  </div>
+  </aside>
   
-  <div class="footer__base">
+  <footer class="footer__base" role="contentinfo">
     <div class="footer__content">
-      <div class="footer__menu">
+      <nav class="footer__menu" aria-label="Footer menu">
         <a href="#" class="footer__link">About Us</a>
         <a href="https://www.netcentric.biz/legal/imprint.html" class="footer__link">Imprint</a>
         <a href="https://www.netcentric.biz/legal/privacy.html" class="footer__link">Privacy</a>
-      </div>
+      </nav>
       <div class="footer__sponsor">Powered by <a href="https://www.netcentric.biz/">Cognizant Netcentric</a></div>
     </div>
-  </div>
+  </footer>
   <script src="script/app.js"></script>
 </body>
