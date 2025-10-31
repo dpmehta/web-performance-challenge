@@ -125,16 +125,52 @@
 
 
         <div class="hero__teaser div2">
-          <img alt="Waterfall preview image" src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
-            data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&h=400&q=100"
-            class="hero__img lazy">
+          <picture>
+            <!-- AVIF: best modern compression -->
+            <source type="image/avif" data-srcset="
+      https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&fm=avif&fit=crop&w=300&h=400&q=60 300w,
+      https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&fm=avif&fit=crop&w=400&h=533&q=65 400w,
+      https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&fm=avif&fit=crop&w=600&h=800&q=70 600w
+    " sizes="(max-width: 600px) 100vw, 400px" />
+
+            <!-- WebP fallback -->
+            <source type="image/webp" data-srcset="
+      https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&fm=webp&fit=crop&w=300&h=400&q=60 300w,
+      https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&fm=webp&fit=crop&w=400&h=533&q=65 400w,
+      https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&fm=webp&fit=crop&w=600&h=800&q=70 600w
+    " sizes="(max-width: 600px) 100vw, 400px" />
+
+            <!-- JPEG/PNG fallback -->
+            <img src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
+              data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&fit=crop&w=400&h=533&q=80"
+              alt="Waterfall preview image" width="400" height="533" class="hero__img lazy" loading="lazy" />
+          </picture>
+
           <div class="hero__teaserText">Top 10 waterfalls to analyse this week</div>
         </div>
         <div class="hero__teaser div3">
-          <img alt="View of the coastline near a lighthouse"
-            src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
-            data-src="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1180&q=80"
-            class="hero__img lazy">
+          <picture>
+            <!-- AVIF: best modern compression -->
+            <source type="image/avif" data-srcset="
+      https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&fm=avif&fit=crop&w=400&q=60 400w,
+      https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&fm=avif&fit=crop&w=616&q=65 616w,
+      https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&fm=avif&fit=crop&w=800&q=70 800w
+    " sizes="(max-width: 600px) 100vw, 616px" />
+
+            <!-- WebP fallback -->
+            <source type="image/webp" data-srcset="
+      https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&fm=webp&fit=crop&w=400&q=60 400w,
+      https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&fm=webp&fit=crop&w=616&q=65 616w,
+      https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&fm=webp&fit=crop&w=800&q=70 800w
+    " sizes="(max-width: 600px) 100vw, 616px" />
+
+            <!-- JPEG fallback -->
+            <img src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
+              data-src="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&fit=crop&w=616&q=70"
+              alt="View of the coastline near a lighthouse" width="616" height="616" class="hero__img lazy"
+              loading="lazy" />
+          </picture>
+
           <div class="hero__teaserText">Bouncing rates increased signifincantly last week</div>
         </div>
       </section>
@@ -144,24 +180,25 @@
           <picture>
             <!-- AVIF (best compression) -->
             <source type="image/avif" srcset="
-      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
-      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
-      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=avif&q=70 800w
-    " sizes="(max-width: 600px) 100vw, 616px" />
+    https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=avif&q=50 400w,
+    https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=avif&q=55 616w,
+    https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=avif&q=60 800w
+  " sizes="(max-width: 600px) 100vw, 616px" />
 
             <!-- WebP fallback -->
             <source type="image/webp" srcset="
-      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
-      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
-      https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=webp&q=70 800w
-    " sizes="(max-width: 600px) 100vw, 616px" />
+    https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=webp&q=50 400w,
+    https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=webp&q=55 616w,
+    https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=webp&q=60 800w
+  " sizes="(max-width: 600px) 100vw, 616px" />
 
             <!-- JPEG fallback -->
             <img
-              src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=jpg&q=70"
+              src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=jpg&q=60"
               alt="Scenic coastal lighthouse view" width="616" height="411" loading="lazy"
               class="teaser__image card__img" />
           </picture>
+
 
           <hr>
           <h1 class="teaser__title">First Party</h1>
@@ -200,23 +237,24 @@
           <picture>
             <!-- AVIF (best compression) -->
             <source type="image/avif" srcset="
-      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
-      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
-      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=avif&q=70 800w
-    " sizes="(max-width: 600px) 100vw, 616px" />
+    https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=avif&q=50 400w,
+    https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=avif&q=55 616w,
+    https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=avif&q=60 800w
+  " sizes="(max-width: 600px) 100vw, 616px" />
 
             <!-- WebP fallback -->
             <source type="image/webp" srcset="
-      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
-      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
-      https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=webp&q=70 800w
-    " sizes="(max-width: 600px) 100vw, 616px" />
+    https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=webp&q=50 400w,
+    https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=webp&q=55 616w,
+    https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=webp&q=60 800w
+  " sizes="(max-width: 600px) 100vw, 616px" />
 
             <!-- Default fallback (JPEG for old browsers) -->
             <img
-              src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=jpg&q=70"
+              src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=jpg&q=60"
               alt="Lighthouse by the sea" width="616" height="411" loading="lazy" class="teaser__image card__img" />
           </picture>
+
 
           <hr>
           <h1 class="teaser__title">Third Party</h1>
