@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-   <title>The Rum Diary</title>
+  <title>The Rum Diary</title>
   <link rel="stylesheet" href="./styles.min.css" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable"/>
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
   <script>
     // advertisment mock
@@ -15,7 +16,7 @@
       const gif = '<div style="width:400px;max-width:100%;"><div style="height:0;padding-bottom:52.4%;position:relative;"><iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe></div></div>';
       setTimeout(() => adSpace.innerHTML = gif, 3000);
     };
-    
+
     // async CSS
     function loadMobileCSS() {
       const link = document.createElement('link');
@@ -27,10 +28,26 @@
 
     window.addEventListener('load', () => {
       loadMobileCSS();
+      loadDeferredScripts();
+      initAd();
+      const container = document.getElementById("video-container");
+      container.innerHTML = `
+          <iframe 
+            src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=1&loop=1&byline=0&muted=1&controls=0"
+            width="640"
+            height="360"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+            preload="none">
+          </iframe>
+      `;
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
 </head>
+
 <body>
   <div id="cookie-vue" role="region" aria-label="Cookie consent banner">
   </div>
@@ -62,126 +79,103 @@
   </header>
 
   <main class="main__base" role="main">
-    <div class="main__advertising" aria-live="polite" aria-label="Advertisement area" aria-live="polite" role="region" aria-label="Latest news ticker"></div>
-    
+    <div class="main__advertising" aria-live="polite" aria-label="Advertisement area" aria-live="polite" role="region"
+      aria-label="Latest news ticker"></div>
+
     <div class="main__content">
       <div class="main__news main__section">
-        <marquee id="site-main-news" width="100%" direction="left" style="line-height: 30px;background-color: darkred;color: red;"></marquee>
+        <marquee id="site-main-news" width="100%" direction="left"
+          style="line-height: 30px;background-color: darkred;color: red;"></marquee>
       </div>
-      
+
       <section class="main__hero main__section" aria-label="Featured carousel">
         <div class="hero__carousel div1 swiper" aria-label="Image carousel">
-  <!-- Swiper wrapper -->
-  <div class="swiper-wrapper">
+          <!-- Swiper wrapper -->
+          <div class="swiper-wrapper">
 
-    <!-- Slide 1 -->
-    <div class="swiper-slide lazy">
-      <img
-        alt="A scenic view of a lighthouse by the sea"
-        src="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=640&q=60"
-        srcset="
+            <!-- Slide 1 -->
+            <div class="swiper-slide lazy">
+              <img alt="A scenic view of a lighthouse by the sea"
+                src="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=640&q=60"
+                srcset="
           https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=480&q=60 480w,
           https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=768&q=70 768w,
           https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=1024&q=80 1024w,
           https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?auto=format&fit=crop&w=1440&q=90 1440w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 60vw"
-        alt="A scenic view related to the lighthouse article"
-        width="1170"
-        height="658"
-        loading="lazy"
-      />
-    </div>
+        " sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 60vw"
+                alt="A scenic view related to the lighthouse article" width="1170" height="658" loading="lazy" />
+            </div>
 
-    <!-- Slide 2 (placeholder or future image) -->
-    <div class="swiper-slide">
-      <img
-        alt="Ocean waves under bright sunlight"
-        src="https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=640&q=60"
-        srcset="
+            <!-- Slide 2 (placeholder or future image) -->
+            <div class="swiper-slide">
+              <img alt="Ocean waves under bright sunlight"
+                src="https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=640&q=60"
+                srcset="
           https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=480&q=60 480w,
           https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=768&q=70 768w,
           https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=1024&q=80 1024w,
           https://images.unsplash.com/photo-1529973565457-a60a2ccf750d??auto=format&fit=crop&w=1440&q=90 1440w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 60vw"
-        alt="Ocean waves under the sun"
-        width="1170"
-        height="658"
-        loading="lazy"
-      />
-    </div>
+        " sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 60vw" alt="Ocean waves under the sun" width="1170"
+                height="658" loading="lazy" />
+            </div>
 
-    <!-- Slide 3 (placeholder or future image) -->
-    <div class="swiper-slide">
-      <img
-        alt="Beautiful lighthouse near rocky shore"
-        src="https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=640&q=60"
-        srcset="
+            <!-- Slide 3 (placeholder or future image) -->
+            <div class="swiper-slide">
+              <img alt="Beautiful lighthouse near rocky shore"
+                src="https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=640&q=60"
+                srcset="
           https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=480&q=60 480w,
           https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=768&q=70 768w,
           https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=1024&q=80 1024w,
           https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=1440&q=90 1440w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 60vw"
-        alt="Beautiful lighthouse near the shore"
-        width="1170"
-        height="658"
-        loading="lazy"
-      />
-    </div>
+        " sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 60vw" alt="Beautiful lighthouse near the shore"
+                width="1170" height="658" loading="lazy" />
+            </div>
 
-  </div>
+          </div>
 
-  <div class="swiper-text" aria-live="polite">Local restaurants finally optimising time to first bite</div>
-</div>
+          <div class="swiper-text" aria-live="polite">Local restaurants finally optimising time to first bite</div>
+        </div>
 
-        
+
         <div class="hero__teaser div2">
-          <img alt="Waterfall preview image" src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&h=400&q=100" class="hero__img lazy">
+          <img alt="Waterfall preview image" src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
+            data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&h=400&q=100"
+            class="hero__img lazy">
           <div class="hero__teaserText">Top 10 waterfalls to analyse this week</div>
         </div>
         <div class="hero__teaser div3">
-          <img  alt="View of the coastline near a lighthouse" src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" data-src="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1180&q=80" class="hero__img lazy">
+          <img alt="View of the coastline near a lighthouse"
+            src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
+            data-src="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1180&q=80"
+            class="hero__img lazy">
           <div class="hero__teaserText">Bouncing rates increased signifincantly last week</div>
         </div>
       </section>
 
       <div class="main__teasers main__section" aria-label="Article teasers">
         <article class="teaser__base">
-         <picture>
-  <!-- AVIF (best compression) -->
-  <source
-    type="image/avif"
-    srcset="
+          <picture>
+            <!-- AVIF (best compression) -->
+            <source type="image/avif" srcset="
       https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
       https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
       https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=avif&q=70 800w
-    "
-    sizes="(max-width: 600px) 100vw, 616px"
-  />
+    " sizes="(max-width: 600px) 100vw, 616px" />
 
-  <!-- WebP fallback -->
-  <source
-    type="image/webp"
-    srcset="
+            <!-- WebP fallback -->
+            <source type="image/webp" srcset="
       https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
       https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
       https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=800&fm=webp&q=70 800w
-    "
-    sizes="(max-width: 600px) 100vw, 616px"
-  />
+    " sizes="(max-width: 600px) 100vw, 616px" />
 
-  <!-- JPEG fallback -->
-  <img
-    src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=jpg&q=70"
-    alt="Scenic coastal lighthouse view"
-    width="616"
-    height="411"
-    loading="lazy"
-    class="teaser__image card__img"
-  />
-</picture>
+            <!-- JPEG fallback -->
+            <img
+              src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?auto=format&fit=crop&w=616&fm=jpg&q=70"
+              alt="Scenic coastal lighthouse view" width="616" height="411" loading="lazy"
+              class="teaser__image card__img" />
+          </picture>
 
           <hr>
           <h1 class="teaser__title">First Party</h1>
@@ -190,38 +184,26 @@
         </article>
         <article class="teaser__base">
           <picture>
-  <!-- AVIF (best compression, modern browsers) -->
-  <source
-    type="image/avif"
-    srcset="
+            <!-- AVIF (best compression, modern browsers) -->
+            <source type="image/avif" srcset="
       https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
       https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
       https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&fm=avif&q=70 800w
-    "
-    sizes="(max-width: 600px) 100vw, 616px"
-  />
+    " sizes="(max-width: 600px) 100vw, 616px" />
 
-  <!-- WebP fallback (nearly universal support) -->
-  <source
-    type="image/webp"
-    srcset="
+            <!-- WebP fallback (nearly universal support) -->
+            <source type="image/webp" srcset="
       https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
       https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
       https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&fm=webp&q=70 800w
-    "
-    sizes="(max-width: 600px) 100vw, 616px"
-  />
+    " sizes="(max-width: 600px) 100vw, 616px" />
 
-  <!-- JPEG fallback (for old browsers) -->
-  <img
-    src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=616&fm=jpg&q=70"
-    alt="Rustic lighthouse by the sea"
-    width="616"
-    height="411"
-    loading="lazy"
-    class="teaser__image card__img"
-  />
-</picture>
+            <!-- JPEG fallback (for old browsers) -->
+            <img
+              src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=616&fm=jpg&q=70"
+              alt="Rustic lighthouse by the sea" width="616" height="411" loading="lazy"
+              class="teaser__image card__img" />
+          </picture>
 
           <hr>
           <h1 class="teaser__title">Second Party</h1>
@@ -230,73 +212,65 @@
         </article>
         <article class="teaser__base">
           <picture>
-  <!-- AVIF (best compression) -->
-  <source
-    type="image/avif"
-    srcset="
+            <!-- AVIF (best compression) -->
+            <source type="image/avif" srcset="
       https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=avif&q=60 400w,
       https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=avif&q=65 616w,
       https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=avif&q=70 800w
-    "
-    sizes="(max-width: 600px) 100vw, 616px"
-  />
+    " sizes="(max-width: 600px) 100vw, 616px" />
 
-  <!-- WebP fallback -->
-  <source
-    type="image/webp"
-    srcset="
+            <!-- WebP fallback -->
+            <source type="image/webp" srcset="
       https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=400&fm=webp&q=60 400w,
       https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=webp&q=65 616w,
       https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=800&fm=webp&q=70 800w
-    "
-    sizes="(max-width: 600px) 100vw, 616px"
-  />
+    " sizes="(max-width: 600px) 100vw, 616px" />
 
-  <!-- Default fallback (JPEG for old browsers) -->
-  <img
-    src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=jpg&q=70"
-    alt="Lighthouse by the sea"
-    width="616"
-    height="411"
-    loading="lazy"
-    class="teaser__image card__img"
-  />
-</picture>
-          
+            <!-- Default fallback (JPEG for old browsers) -->
+            <img
+              src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=616&fm=jpg&q=70"
+              alt="Lighthouse by the sea" width="616" height="411" loading="lazy" class="teaser__image card__img" />
+          </picture>
+
           <hr>
           <h1 class="teaser__title">Third Party</h1>
           <div class="teaser__text"></div>
           <button class="teaser__link">Read more</button>
         </article>
       </div>
-      
+
       <section class="main__weather main__section" aria-label="Weather information">
-        <a class="weatherwidget-io" href="https://forecast7.com/en/48d1411d58/munich/" data-label_1="MUNICH" data-label_2="WEATHER" data-theme="original" >MUNICH WEATHER</a>
+        <a class="weatherwidget-io" href="https://forecast7.com/en/48d1411d58/munich/" data-label_1="MUNICH"
+          data-label_2="WEATHER" data-theme="original">MUNICH WEATHER</a>
       </section>
-      
+
       <section class="main__video main__section" aria-label="Video and feedback form">
         <div id="video-container" aria-hidden="true"></div>
         <form class="form__base" aria-label="Lighthouse feedback form">
-          <p class="form__intro">Something about lighthouses, describing point of the video we are putting here to prove how awesome they really are, no.</p>
+          <p class="form__intro">Something about lighthouses, describing point of the video we are putting here to prove
+            how awesome they really are, no.</p>
           <div class="from__control">
             <label class="form__label" for="user-name">Name</label>
-            <input type="text" id="user-name" name="user-name"/>
+            <input type="text" id="user-name" name="user-name" />
           </div>
           <div class="from__control">
-            <label class="form__label" for="user-feedback">Please share with us why do you think lighthouses are awesome: </label>
+            <label class="form__label" for="user-feedback">Please share with us why do you think lighthouses are
+              awesome: </label>
             <textarea id="user-feedback" name="user-feedback"></textarea>
           </div>
-          <button class="form__button" id="button"  type="button" onclick="alert('Submitting using way too much JavaScript...')">Submit</button>
+          <button class="form__button" id="button" type="button"
+            onclick="alert('Submitting using way too much JavaScript...')">Submit</button>
         </form>
-    </section>
+      </section>
   </main>
-  
+
   <aside class="disclaimer__base" role="note">
     <p class="disclaimer__text">
-      This site is made for the purpose of web performance and accessibility testing challeng and it is full of bad practices on purpose.
+      This site is made for the purpose of web performance and accessibility testing challeng and it is full of bad
+      practices on purpose.
     </p>
   </aside>
-  
+
   <footer class="footer__base" role="contentinfo">
     <div class="footer__content">
       <nav class="footer__menu" aria-label="Footer menu">

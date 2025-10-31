@@ -7,24 +7,6 @@ const CONTENT_ARTICLE_TEASERS = [
 const acceptCookies = () => {
   document.body.classList.remove('no-scroll');
   document.querySelector('.cookieLayer__base').classList.add('cookieLayer__base--hidden');
-
-  initAd();
-    loadDeferredScripts();
-    const container = document.getElementById("video-container");
-    container.innerHTML = `
-      <iframe 
-        src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=1&loop=1&byline=0&muted=1&controls=0"
-        width="640"
-        height="360"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        loading="lazy"
-        preload="none">
-      </iframe>
-    `;
-
-
 };
 
 const dynamicContent = () => {
