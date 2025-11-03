@@ -69,7 +69,7 @@ Link : <a href="https://drive.google.com/file/d/1_t9kp07-BAtD2ISiUm9A10NNZ2bEwc9
 ---
 
 ## ✅ Summary
-This PR delivers:
+This Solution delivers:
 - Faster load times and reduced blocking scripts.
 - Improved Lighthouse scores (Performance, Accessibility, SEO).
 - Cleaner, modern, and maintainable code structure.
