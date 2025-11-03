@@ -12,6 +12,8 @@ Multiple front-end refactors were made to optimize resource loading, enhance sem
 - Deplyoed Site :  <a href="https://dpmehta.github.io/web-performance-challenge/"> Deplyoed Site </a>
 - Page Speed Results :  <a href="https://pagespeed.web.dev/analysis/https-dpmehta-github-io-web-performance-challenge/ja1xhxsev7?form_factor=mobile"> Results </a>
 
+---
+
 ## 🔧 Key Improvements
 
 ### 🖼️ Image Optimization
@@ -59,12 +61,6 @@ After these optimizations, the website achieved **notable improvements** on [Pag
 - **Performance:** Substantial increase due to deferred resources and responsive media.
 - **Accessibility:** Improved due to semantic structure and ARIA enhancements.
 - **SEO:** Better indexing signals through optimized HTML and meta practices.
-
----
-
-## 📹 Demo Video 
-
-Link : <a href="https://drive.google.com/file/d/1_t9kp07-BAtD2ISiUm9A10NNZ2bEwc9D/view?usp=drive_link"> Demo Video </a>
 
 ---
 
